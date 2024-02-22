@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Club 📚</title>
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 20px;
+            border-style: none;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: #cdb49f;
+            color: black;
+            transition: all 150ms ease-in-out;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        p {
+            padding: 40px 0 20px 0;
+            line-height: 1.4;
+            text-align: justify;
+            margin-top: 10px
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .light {
+            background: linear-gradient(180deg, #f5e7da 0%, #cdb49f 100%);
+            color: #2c3941;
+        }
+
+        .dark {
+            background: linear-gradient(180deg, #654737 0%, #26170F 100%);
+            color: #E2E1E1
+        }
+
+        .dark a {
+            color: #F0DCC9;
+        }
+
+        .dark .club_join {
+            background-color: #F0DCC9;
+        }
+
+        .dark .club_join:hover {
+            cursor: pointer;
+            background-color: #8C6A56;
+            color: white;
+            transition: all 150ms ease-in-out;
+        }
+
+        .dark .content_container {
+            background-color: #260A0F;
+        }
+
+        .dark .dark_theme {
+            background-color: #F0DCC9;
+            color: black;
+        }
+
+        .content_container {
+            background-color: white;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+            max-width: 50%;
+            padding: 20px 30px;
+            box-shadow: 5px 5px 10px 7px rgba(0, 0, 0, .2);
+        }
+
+        .dark_theme {
+            background-color: #260A0F;
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .dark .dark_theme:hover {
+            cursor: pointer;
+            background-color: #260A0F;
+            color: white;
+            transition: all 150ms ease-in-out;
+        }
+
+        .club_join {
+            background-color: coral;
+        }
+
+
+
+        .intro_club_picture {
+            transition: all 150ms ease-in-out;
+            display: block;
+            margin: 40px auto;
+        }
+
+        .intro_club_picture:hover {
+            transform: scale(1.1);
+            filter: contrast(70%);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .grid img {
+            width: 100%;
+            height: 100%;
+            transition: transform 200ms ease-in-out;
+        }
+
+        .grid img:hover {
+            transform: scale(2);
+        }
+    </style>
+</head>
+
+<body class="light">
+    <button class="dark_theme">Change theme</button>
+    <div class="content_container">
+        <hr />
+        <h1>Book Club ☕</h1>
+        <h2>We help to get out of a reading slump</h2>
+        <hr />
+
+        <a href="https://www.realsimple.com/health/preventative-health/benefits-of-reading-real-books"
+            target="_blank"><img
+                src="https://thumbor.forbes.com/thumbor/fit-in/1290x/https://www.forbes.com/advisor/wp-content/uploads/2022/12/Books.jpeg.jpg"
+                alt="books" class="intro_club_picture" /></a>
+        <div class="grid">
+            <img src="https://mylearningspringboard.com/wp-content/uploads/2012/02/Young-Boy-Reading-in-the-Library.jpg"
+                alt="" />
+            <img src="https://online.merrimack.edu/wp-content/uploads/2019/05/MCMED_5-Reasons-REading-is-So-Important-to-Student-Success.jpg.webp"
+                alt="" />
+            <img src="https://assets.entrepreneur.com/content/3x2/2000/20151006165136-introvert-reading-books-.jpeg?format=pjeg&auto=webp&crop=16:9&width=675&height=380"
+                alt="" />
+            <img src="https://www.artshub.com.au/wp-content/uploads/sites/2/2022/10/love-e1665097134741.jpg?w=1024"
+                alt="" />
+        </div>
+
+        <p>Ever found yourself in a reading slump, where the joy of diving into a good book seems elusive? We
+            understand. <br /><br />
+            A reading slump is like a temporary pause button on your literary adventures. At our book club, we embrace
+            these moments, offering a supportive community to help rekindle your love for reading. Join us as we
+            navigate through reading slumps together, discovering new books and rediscovering the joy of storytelling.
+        </p>
+
+        <button class="club_join">Join Book Club</button>
+    </div>
+    <footer>Codded by <a href="https://www.instagram.com/kashia_sm/" target="_blank">Katarzyna Smelcerz</a>✨</footer>
+
+    <script>
+
+        function makeItDark() {
+            let body = document.querySelector("body");
+            body.classList.toggle("dark");
+        }
+
+        //------------------------------------------------
+        function ifInString(word, character) {
+
+            if (word.includes(character)) {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        //--------------------------------------------
+        function firstLetterCapitalizer(word) {
+
+            word = word.toLowerCase();
+            const firstLetter = word.charAt(0);
+            const firstLetterCap = firstLetter.toUpperCase();
+            const remainingLetters = word.slice(1);
+            word = firstLetterCap + remainingLetters;
+
+            return word;
+        }
+
+        //------------------------------------------
+        function join() {
+            let name = prompt("Your name: ");
+            let mail = prompt("You email address: ");
+
+            name = firstLetterCapitalizer(name);
+
+            if (ifInString(mail, '@') && ifInString(mail, '.')) {
+                alert(`Welcome to the book club, ${name}!`);
+            }
+            else {
+                alert(`Provided e-mail address is not correct,
+                please try again.`);
+            }
+        }
+
+        //------------------------------------------------
+        let bookClubButton = document.querySelector(".club_join");
+        bookClubButton.addEventListener("click", join);
+
+        let buttonColorTheme = document.querySelector(".dark_theme");
+        buttonColorTheme.addEventListener("click", makeItDark);
+
+    </script>
+</body>
+
+</html>
